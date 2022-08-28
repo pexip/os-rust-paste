@@ -1,0 +1,14 @@
+Test-Command: /usr/share/cargo/bin/cargo-auto-test paste 1.0.7 --all-targets --all-features
+Features: test-name=rust-paste:@
+Depends: dh-cargo (>= 18), librust-paste-test-suite-0+default-dev, librust-rustversion-1+default-dev, librust-trybuild-1+default-dev (>= 1.0.49-~~), librust-trybuild-1+diff-dev (>= 1.0.49-~~), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test paste 1.0.7 --all-targets 
+Features: test-name=librust-paste-dev:default
+Depends: dh-cargo (>= 18), librust-paste-test-suite-0+default-dev, librust-rustversion-1+default-dev, librust-trybuild-1+default-dev (>= 1.0.49-~~), librust-trybuild-1+diff-dev (>= 1.0.49-~~), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test paste 1.0.7 --all-targets --no-default-features
+Features: test-name=librust-paste-dev:
+Depends: dh-cargo (>= 18), librust-paste-test-suite-0+default-dev, librust-rustversion-1+default-dev, librust-trybuild-1+default-dev (>= 1.0.49-~~), librust-trybuild-1+diff-dev (>= 1.0.49-~~), @
+Restrictions: allow-stderr, skip-not-installable

@@ -1,0 +1,32 @@
+Source: rust-paste
+Section: rust
+Priority: optional
+Build-Depends: debhelper (>= 12),
+ dh-cargo (>= 25),
+ cargo:native <!nocheck>,
+ rustc:native <!nocheck>,
+ libstd-rust-dev <!nocheck>
+Maintainer: Debian Rust Maintainers <pkg-rust-maintainers@alioth-lists.debian.net>
+Uploaders:
+ Fabian Grünbichler <f.gruenbichler@proxmox.com>
+Standards-Version: 4.5.1
+Vcs-Git: https://salsa.debian.org/rust-team/debcargo-conf.git [src/paste]
+Vcs-Browser: https://salsa.debian.org/rust-team/debcargo-conf/tree/master/src/paste
+Rules-Requires-Root: no
+
+Package: librust-paste-dev
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${misc:Depends}
+Provides:
+ librust-paste+default-dev (= ${binary:Version}),
+ librust-paste-1-dev (= ${binary:Version}),
+ librust-paste-1+default-dev (= ${binary:Version}),
+ librust-paste-1.0-dev (= ${binary:Version}),
+ librust-paste-1.0+default-dev (= ${binary:Version}),
+ librust-paste-1.0.7-dev (= ${binary:Version}),
+ librust-paste-1.0.7+default-dev (= ${binary:Version})
+Description: Macros for all your token pasting needs - Rust source code
+ This package contains the source for the Rust paste crate, packaged by debcargo
+ for use with cargo and dh-cargo.
